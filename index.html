@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    .car {
+      animation: moveCar 3s ease-in-out 1s forwards;
+    }
+    .wheel1 {
+      animation: movewhell1 3s ease-in-out 1s forwards;
+    }
+    .wheel2 {
+      animation: movewhell2 3s ease-in-out 1s forwards;
+    }
+    .windo1 {
+      animation: windowMove1 3s ease-in-out 1s forwards;
+    }
+    .windo2 {
+      animation: windowMove2 3s ease-in-out 1s forwards;
+    }
+
+    @keyframes moveCar {
+      100% {
+        cx: 950;
+      }
+    }
+    @keyframes movewhell1 {
+      100% {
+        cx: 900;
+      }
+    }
+    @keyframes movewhell2 {
+      100% {
+        cx: 1000;
+      }
+    }
+    @keyframes windowMove1 {
+      100% {
+        cx: 990;
+      }
+    }
+    @keyframes windowMove2 {
+      100% {
+        cx: 915;
+      }
+    }
+
+    .floor {
+      animation: flowerMove 2s ease-in 2s backwards;
+      transform-origin: 530px 450px;
+    }
+    @keyframes flowerMove {
+      0% {
+        cx: 530;
+        transform: scale(0.3);
+      }
+      100% {
+        cx: ;
+        transform: scale(1);
+      }
+    }
+    #sky {
+      animation: day 2s ease-in 2s forwards;
+    }
+    @keyframes day {
+      100% {
+        fill: lightblue;
+      }
+    }
+    #sun {
+      animation: sunUp 2s ease-in 2s backwards;
+    }
+    @keyframes sunUp {
+      0% {
+        cx: -50;
+        cy: -50;
+      }
+    }
+  </style>
+  <body>
+    <svg
+      version="1.1"
+      baseProfile="full"
+      width="1000"
+      height="500"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- sky -->
+      <rect id="sky" width="100%" height="100%" fill="darkblue" />
+      <!-- house -->
+      <polygon points="250,150 80,300 420,300" fill="orange" />
+      <rect x="100" y="300" width="300" height="500" fill="white" />
+      <rect x="280" y="400" width="60" height="100" fill="brown" />
+      <rect x="150" y="350" width="90" height="100" fill="lightblue" />
+      <circle id="sun" cx="50" cy="50" r="80" fill="yellow" />
+
+      <!-- flour -->
+      <line
+        x1="530"
+        y1="500"
+        x2="530"
+        y2="450"
+        stroke="green"
+        stroke-width="3"
+      />
+      <circle class="floor" cx="550" cy="425" r="20" fill="pink" />
+      <circle class="floor" cx="540" cy="445" r="20" fill="lightpink" />
+      <circle class="floor" cx="520" cy="445" r="20" fill="pink" />
+      <circle class="floor" cx="510" cy="425" r="20" fill="lightpink" />
+      <circle class="floor" cx="520" cy="410" r="20" fill="pink" />
+      <circle class="floor" cx="540" cy="410" r="20" fill="lightpink" />
+      <circle class="floor" cx="530" cy="427" r="12" fill="yellow" />
+
+      <!-- car -->
+
+      <clipPath id="cut-off-bottom">
+        <rect x="0" y="380" width="3000" height="100" />
+      </clipPath>
+      <circle
+        class="car"
+        cx="110"
+        cy="480"
+        r="100"
+        clip-path="url(#cut-off-bottom)"
+        fill="red"
+      />
+      <circle class="wheel1" cx="60" cy="480" r="20" fill="black" />
+      <circle class="wheel2" cx="150" cy="480" r="20" fill="black" />
+      <ellipse
+        class="windo1"
+        cx="145"
+        cy="420"
+        rx="30"
+        ry="20"
+        fill="lightgray"
+      />
+      <ellipse
+        class="windo2"
+        cx="75"
+        cy="420"
+        rx="30"
+        ry="20"
+        fill="lightgray"
+      />
+    </svg>
+  </body>
+</html>
